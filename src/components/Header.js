@@ -1,3 +1,5 @@
+import ListProducts from "../components/ListProducts";
+
 const Header = () => {
     return (
         <header
@@ -15,6 +17,7 @@ const Header = () => {
             <div className={'header__cart'}>
 
             </div>
+            <ListProducts></ListProducts>
         </header>
     );
 }
