@@ -1,0 +1,197 @@
+.Card__body {
+    position: relative;
+    display: flex;
+    Top: 190;
+    right: 156;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.13);
+    border-radius: 7px;
+    transition: all .5s ease;
+    transition-delay: .2s;
+    margin-right: 50px;
+}
+
+.Card__header__img {
+    position: absolute;
+}
+
+.Card__section__title {
+    position: absolute;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    /* identical to box height, or 133% */
+    color: #000000;
+    border: 1px solid black;
+}
+
+.Card__section_expansiveTitle {
+    position: absolute;
+    border: unset;
+    outline: unset;
+    top: 252px;
+    right: 16px;
+
+    font-size: 18px;
+    color: #8000FF;
+    background: #fff;
+}
+
+.Card__section__desc {
+    position: absolute;
+    width: 850px;
+    height: 48px;
+    left: 261px;
+    top: 40px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+    color: #000000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+.Card__section__price__high {
+    position: absolute;
+    width: 200px;
+    height: 24px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 24px;
+    /* identical to box height, or 75% */
+    color: #000000;
+    
+}
+
+.Card__section__price__small {
+    font-size: 14px;
+}
+
+.Card__section__installments {
+    position: absolute;
+    width: 239px;
+    height: 24px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 24px;
+    /* identical to box height, or 200% */
+    color: #000000;
+}
+
+.Card__footer__button__buy {
+    position: absolute;
+    width: 226px;
+    height: 44px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: #FFFFFF;
+    background: #8000FF;
+    border: unset;
+    border-radius: 4px;
+    outline: unset;
+}
+
+.Card__footer__button__buy:active {
+    font-size: 10pt;
+}
+
+.Card__footer__amountBag__sub:active {
+    font-size: 10pt;
+}
+
+.Card__footer__amountBag__sum:active {
+    font-size: 10pt;
+}
+
+.Card__footer__button__buy:hover {
+    opacity: .7;
+}
+
+.Card__footer__amountBag {
+    position: absolute;
+    width: 19px;
+    height: 24px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 24px;
+    /* identical to box height, or 100% */
+
+    text-align: center;
+
+    color: #000000;
+}
+
+.Card__footer__amountBag__sub {
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: #FFFFFF;
+    background: #8000FF;
+    border: unset;
+    border-radius: 4px;
+    outline: unset;
+}
+
+.Card__footer__amountBag__sum {
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: #FFFFFF;
+    background: #8000FF;
+    border: unset;
+    border-radius: 4px;
+    outline: unset;
+    animation: all 10s;
+    animation-delay: 10s;
+}
+
+@keyframes animation__focus {
+    0% {
+       opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes animation__initial {
+    0% {
+        opacity: 0;
+     }
+
+     40% {
+        opacity: 0;
+     }
+ 
+     100% {
+         opacity: 1;
+     }
+    
+    
+}
