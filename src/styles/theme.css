@@ -21,6 +21,7 @@ Não é melhor colocar assim pra ficar responsivo?
 .app__root {
     height: 100%;
     width: 100%;
+    background-color: #E5E5E5;
 }
 
 .header {
