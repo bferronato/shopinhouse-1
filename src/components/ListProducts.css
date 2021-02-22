@@ -1,4 +1,4 @@
-.listProducts {
+.list__products {
     display: flex;
     flex-wrap: wrap;
     border: 1px solid black;

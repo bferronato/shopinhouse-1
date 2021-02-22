@@ -13,7 +13,7 @@ const ListProducts = () => {
     });
 
     return (
-        <div className='listProducts'>
+        <div className='list__products'>
             {products.map((product, i) => (
                 <Card product={product} key={i}></Card>
             ))}
