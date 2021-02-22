@@ -1,7 +1,3 @@
-import { useState } from "react"
-import { fetchProducts } from "../services/api";
-import HomeView from "../views/HomeView";
-import './ListProducts.css';
 import { useState, useEffect } from "react"
 import { fetchProducts } from "../services/api"
 import Card from "../components/Card"
@@ -12,9 +8,9 @@ const ListProducts = () => {
     const [products, setProducts] = useState([]);
     const [activeCard, setActiveCard] = useState('')
 
-/*  const [bag, setBag] = useState([])
-    const [orderBag, setOrderbag] = useState('')
-    const [operation, setOperation] = useState('') */
+    /*  const [bag, setBag] = useState([])
+        const [orderBag, setOrderbag] = useState('')
+        const [operation, setOperation] = useState('') */
 
     fetchProducts().then(function (result) {
         setProducts(result)
@@ -42,14 +38,14 @@ const ListProducts = () => {
         setOrderbag(0)
     }, [orderBag]) */
 
+    {/* <HomeView title="Bem vindo!">
+        <div className='list__products'>
+            {products.map((product, i) => (
+                <Card product={product} key={i}></Card>
+            ))}
+        </div>
+    </HomeView> */}
     return (
-        <HomeView title="Bem vindo!">
-            <div className='list__products'>
-                {products.map((product, i) => (
-                    <Card product={product} key={i}></Card>
-                ))}
-            </div>
-        </HomeView>
         <div className='listProducts'>
             {products.map((item, i) => {
                 if (activeCard.length === 0) {
