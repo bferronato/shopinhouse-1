@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { fetchProducts } from "../services/api"
+import './ListProducts.css';
 import Card from "../components/Card"
 
 const ListProducts = () => {
@@ -13,12 +14,8 @@ const ListProducts = () => {
 
     return (
         <div className='listProducts'>
-            LIST PRODUCTS
             {products.map((product, i) => (
-                <div key={i}>
-                    {product.name} - {product.type}
-                    <Card product={product}></Card>
-                </div>
+                <Card product={product} key={i}></Card>
             ))}
         </div>
     );
