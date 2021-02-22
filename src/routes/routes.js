@@ -1,17 +1,23 @@
 import CartView from "../views/CartView";
-import HomeView from "../views/HomeView";
+import ListProducts from "../components/ListProducts";
+import ShopCart from "../components/ShopCart";
 
 const route = [
     {
         path: '/',
-        component: HomeView,
+        component: ListProducts,
         exact: true
     },
     {
         path: '/cart',
         component: CartView,
         exact: true
-    }
+    },
+    {
+        path: '/shop-cart',
+        component: ShopCart,
+        exact: true
+    },
 ];
 
 export default route;

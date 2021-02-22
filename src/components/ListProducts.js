@@ -1,5 +1,6 @@
 import { useState } from "react"
-import { fetchProducts } from "../services/api"
+import { fetchProducts } from "../services/api";
+import HomeView from "../views/HomeView";
 import './ListProducts.css';
 import Card from "../components/Card"
 
@@ -13,11 +14,13 @@ const ListProducts = () => {
     });
 
     return (
-        <div className='list__products'>
-            {products.map((product, i) => (
-                <Card product={product} key={i}></Card>
-            ))}
-        </div>
+        <HomeView title="Test">
+            <div className='list__products'>
+                {products.map((product, i) => (
+                    <Card product={product} key={i}></Card>
+                ))}
+            </div>
+        </HomeView>
     );
 }
 

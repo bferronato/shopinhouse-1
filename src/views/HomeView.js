@@ -1,14 +1,12 @@
 import React from 'react';
 import './Home.css';
-import ListProducts from '../components/ListProducts';
 
-const HomeView = () => {
+const HomeView = (props) => {
 
     return (
         <div className={'app__home'}>
-            <h1>Bem vindo!</h1>
-
-            <ListProducts></ListProducts>
+            <h1>{props.title}</h1>
+            {props.children}
         </div>
     );
 }
