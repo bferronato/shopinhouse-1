@@ -1,18 +1,9 @@
-import './Card.css';
-
-const Card = (props) => {
 import React, { Fragment, useState, useEffect } from 'react';
 import { FaTrash, FaArrowDown } from 'react-icons/fa'
 import '../styles/Card.css'
 
 let buttonClick = false
 
-    return (
-        <div className='product__card'>
-            <img src={product.image} className="card__image"></img>
-            <p>{product.name}</p>
-            <p>{product.descricao}</p>
-            <p>{product.price}</p>
 const Card = ({ product, setActiveCard }) => {
 
     const [active, setActive] = useState(false)
