@@ -21,6 +21,47 @@ const Card = ({ product, setActiveCard, bagOrder, setOrderbag, setOperation }) =
         if (range <= 80) { return "27px" }
         if (range > 80) { return "20px" }
     }
+    const activeCard = () => {
+        if (!buttonClick) {
+            if (!active) {
+                setActiveCard(product.sku)
+                setActive(true)
+            } else {
+                setActiveCard('')
+                setActive(false)
+            }
+        } else { buttonClick = false }
+    };
+    const amountId = () => {
+        let value = ""
+        bagOrder.map((item => {
+            if (item.id === product.sku) {
+                value = item.id
+            }
+        }))
+        return value
+    }
+    const amount = () => {
+        let value = 0
+        bagOrder.map((item => {
+            if (item.id === product.sku) {
+                value = item.amount
+            }
+        }))
+        return value
+    }
+    const buyButton = () => {
+        buttonClick = true
+
+        setOrderbag(amountId())
+        setOperation('sum')
+    }
+    const backButton = () => {
+        buttonClick = true
+
+        setOrderbag(amountId())
+        setOperation('sub')
+    }
     const Card__body__small = {
         width: "258px",
         height: "448px"
@@ -135,50 +176,7 @@ const Card = ({ product, setActiveCard, bagOrder, setOrderbag, setOperation }) =
         left: "362px",
         animation: "animation__focus 1s"
     }
-    const activeCard = () => {
-        if (!buttonClick) {
-            if (!active) {
-                setActiveCard(product.sku)
-                setActive(true)
-            } else {
-                setActiveCard('')
-                setActive(false)
-            }
-        } else { buttonClick = false }
-    };
 
-    const amountId = () => {
-        let value = ""
-        bagOrder.map((item => {
-            if (item.id === product.sku) {
-                value = item.id
-            }
-        }))
-        return value
-    }
-
-    const amount = () => {
-        let value = 0
-        bagOrder.map((item => {
-            if (item.id === product.sku) {
-                value = item.amount
-            }
-        }))
-        return value
-    }
-
-    const buyButton = () => {
-        buttonClick = true
-
-        setOrderbag(amountId())
-        setOperation('sum')
-    }
-    const backButton = () => {
-        buttonClick = true
-
-        setOrderbag(amountId())
-        setOperation('sub')
-    }
     /* const expansiveClick = () => {
         buttonClick = true
         setExpansiveTitle(!expansiveTitle)
@@ -201,10 +199,10 @@ const Card = ({ product, setActiveCard, bagOrder, setOrderbag, setOperation }) =
                     </header>
                     <section>
                         <span style={!active ? Card__section__price__high__small : Card__section__price__high__medium} className="Card__section__price__high">
-                            {"R$ " + product.price}
-                            <span className="Card__section__price__small">{/* "," + String(product.price).substr(3)} */}</span>
+                            {"R$ " + String(product.price).substr(0,String(product.price).length - 3)}
+                            <span className="Card__section__price__small">{"," + String(product.price).substr(String(product.price).length - 2,String(product.price).length)}</span>
                         </span>
-                        <span style={!active ? Card__section__installments__small : Card__section__installments__medium} className="Card__section__installments">{`ou 10x de ${(product.price / 10).toFixed(2)}`}</span>
+                        <span style={!active ? Card__section__installments__small : Card__section__installments__medium} className="Card__section__installments">{`ou ${String(product.price).length * 2}x de ${(product.price / (String(product.price).length * 2)).toFixed(2)}`}</span>
                     </section>
                 </section>
                 <footer>

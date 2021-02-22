@@ -38,7 +38,6 @@ const ListProducts = () => {
         }
         setOrderbag(0)
     }, [orderBag]) 
-    
     /* const bagOrderId = (id) => {
         let amountBag = {}
         bag.map((item => {
