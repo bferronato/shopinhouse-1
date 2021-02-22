@@ -3,13 +3,12 @@ import { FaTrash, FaArrowDown } from 'react-icons/fa'
 import '../styles/Card.css'
 
 let buttonClick = false
+/* let expansiveTitle = false */
+
 const Card = ({ product, setActiveCard, bagOrder, setOrderbag, setOperation }) => {
 
     const [active, setActive] = useState(false)
     const [activeDesc, setActiveDesc] = useState(false)
-
-  /*const [expansiveTitle, setExpansiveTitle] = useState(false)
-    const [titleSmall, setTitleSmall] = useState(product.name.substr(0, 16)) */
 
     useEffect(() => {
         setActiveDesc(!activeDesc)
@@ -21,6 +20,13 @@ const Card = ({ product, setActiveCard, bagOrder, setOrderbag, setOperation }) =
         if (range <= 80) { return "27px" }
         if (range > 80) { return "20px" }
     }
+    /* const expansiveClickTitle = () => {
+        buttonClick = true
+        
+        if (!expansiveTitle) {
+            return product.name
+        } else { return product.name.substr(0, 16) }
+    } */
     const activeCard = () => {
         if (!buttonClick) {
             if (!active) {
@@ -176,14 +182,6 @@ const Card = ({ product, setActiveCard, bagOrder, setOrderbag, setOperation }) =
         left: "362px",
         animation: "animation__focus 1s"
     }
-
-    /* const expansiveClick = () => {
-        buttonClick = true
-        setExpansiveTitle(!expansiveTitle)
-        if (expansiveTitle) {
-            setTitleSmall(product.name)
-        } else { product.name.substr(0, 16) }
-    } */
    
     return (
         <Fragment>
@@ -193,8 +191,8 @@ const Card = ({ product, setActiveCard, bagOrder, setOrderbag, setOperation }) =
                 </header>
                 <section>
                     <header>
-                        <span style={!active ? Card__section__title__small : Card__section__title__medium} className="Card__section__title">{!active ? product.name.toUpperCase() /* titleSmall.toUpperCase() */ : product.name.toUpperCase()}</span>
-                        {/* <button className="Card__section_expansiveTitle"><FaArrowDown /></button> */}
+                        <span style={!active ? Card__section__title__small : Card__section__title__medium} className="Card__section__title">{/* expansiveClickTitle().toUpperCase() */ product.name}</span>
+                        {/* <button onClick={() => {expansiveTitle = !expansiveTitle}} className="Card__section_expansiveTitle"><FaArrowDown /></button> */}
                         <span title={product.description} style={!activeDesc ? Card__section__desc__enable : Card__section__desc__disable} className="Card__section__desc">{product.description}</span>
                     </header>
                     <section>
