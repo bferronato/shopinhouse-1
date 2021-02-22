@@ -14,7 +14,7 @@ const ListProducts = () => {
     });
 
     return (
-        <HomeView title="Test">
+        <HomeView title="Bem vindo!">
             <div className='list__products'>
                 {products.map((product, i) => (
                     <Card product={product} key={i}></Card>
