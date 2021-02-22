@@ -10,14 +10,13 @@ const ShopInHouseApp = () => {
             <BrowserRouter
                 basename={process.env.PUBLIC_URL}>
                 <Switch>
-                    {routes.map((route, index) => {
+                    {routes.map(route => (
                         <Route
-                            component={route.component}
-                            exact
-                            key={index}
+                            key={route.path}
                             path={route.path}
-                        />
-                    })}
+                            component={route.component}
+                            exact={route.exact} />
+                    ))}
                 </Switch>
             </BrowserRouter>
         </div>

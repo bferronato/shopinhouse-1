@@ -1,9 +1,14 @@
 import React from 'react';
+import ListProducts from '../components/ListProducts';
 
 const HomeView = () => {
 
     return (
-        <div></div>
+        <div>
+            <div>Home Page</div>
+
+            <ListProducts></ListProducts>
+        </div>
     );
 }
 

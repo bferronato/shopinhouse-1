@@ -21,7 +21,7 @@ const Header = () => {
             <div className={'header__cart'}>
 
             </div>
-            <ListProducts></ListProducts>
+            
         </header>
     );
 }
