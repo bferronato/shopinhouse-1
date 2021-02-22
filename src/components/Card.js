@@ -97,14 +97,14 @@ const Card = ({ product, setActiveCard, bagOrder, setOrderbag, setOperation }) =
         left: "16px",
         fontSize: "18px",
         transition: "1s",
-        animation: "animation__initial 1s"
+        animation: "animation__initial 1.2s"
     }
     const Card__section__title__medium = {
         width: "90%",
         top: "-64px",
         left: "2px",
         fontSize: titleSize(product.name.length),
-        animation: "animation__focus 2s",
+        animation: "animation__focus 3s",
         padding: "10px"
     }
     const Card__section__price__high__small = {

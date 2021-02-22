@@ -1,7 +1,6 @@
 .list__products {
     display: flex;
     flex-wrap: wrap;
-    border: 1px solid black;
     flex-flow: row wrap;
     justify-content: space-around;
 }

@@ -107,19 +107,10 @@
     outline: unset;
 }
 
-.Card__footer__button__buy:active {
+.Card__footer__amountBag__sub:active, .Card__footer__amountBag__sum:active, .Card__footer__button__buy:active {
     font-size: 10pt;
 }
-
-.Card__footer__amountBag__sub:active {
-    font-size: 10pt;
-}
-
-.Card__footer__amountBag__sum:active {
-    font-size: 10pt;
-}
-
-.Card__footer__button__buy:hover {
+.Card__footer__button__buy:hover, .Card__footer__amountBag__sub:hover, .Card__footer__amountBag__sum:hover {
     opacity: .7;
 }
 
@@ -179,6 +170,10 @@
        opacity: 0;
     }
 
+    20% {
+        opacity: 0;
+     }
+
     100% {
         opacity: 1;
     }
@@ -189,13 +184,11 @@
         opacity: 0;
      }
 
-     40% {
+     70% {
         opacity: 0;
      }
  
      100% {
          opacity: 1;
      }
-    
-    
 }
