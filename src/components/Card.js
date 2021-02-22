@@ -3,8 +3,7 @@ import { FaTrash, FaArrowDown } from 'react-icons/fa'
 import '../styles/Card.css'
 
 let buttonClick = false
-
-const Card = ({ product, setActiveCard }) => {
+const Card = ({ product, setActiveCard, bagOrder, setOrderbag, setOperation }) => {
 
     const [active, setActive] = useState(false)
     const [activeDesc, setActiveDesc] = useState(false)
@@ -147,28 +146,47 @@ const Card = ({ product, setActiveCard }) => {
             }
         } else { buttonClick = false }
     };
-    /* const buyButton = () => {
+
+    const amountId = () => {
+        let value = ""
+        bagOrder.map((item => {
+            if (item.id === product.sku) {
+                value = item.id
+            }
+        }))
+        return value
+    }
+
+    const amount = () => {
+        let value = 0
+        bagOrder.map((item => {
+            if (item.id === product.sku) {
+                value = item.amount
+            }
+        }))
+        return value
+    }
+
+    const buyButton = () => {
         buttonClick = true
 
-        setOrderbag(product.sku)
+        setOrderbag(amountId())
         setOperation('sum')
-        setBagCard({})
     }
     const backButton = () => {
         buttonClick = true
 
-        setOrderbag(product.sku)
+        setOrderbag(amountId())
         setOperation('sub')
-        setBagCard({})
     }
-    const expansiveClick = () => {
+    /* const expansiveClick = () => {
         buttonClick = true
         setExpansiveTitle(!expansiveTitle)
         if (expansiveTitle) {
             setTitleSmall(product.name)
         } else { product.name.substr(0, 16) }
     } */
-
+   
     return (
         <Fragment>
             <article style={!active ? Card__body__small : Card__body__medium} className="Card__body" onClick={activeCard}>
@@ -190,14 +208,14 @@ const Card = ({ product, setActiveCard }) => {
                     </section>
                 </section>
                 <footer>
-                    {0 < 1 && <button style={!active ? Card__footer__button__buy_small : Card__footer__button__buy_medium} className="Card__footer__button__buy">Comprar</button>}
-                    {/* {bagCard.amount >= 1 &&
+                    {amount() < 1 && <button style={!active ? Card__footer__button__buy_small : Card__footer__button__buy_medium} className="Card__footer__button__buy" onClick={buyButton}>Comprar</button>}
+                    {amount() >= 1 &&
                         <Fragment>
-                            <button style={activeDesc ? Card__footer__amountBag__sub__small : Card__footer__amountBag__sub__medium} className="Card__footer__amountBag__sub" onClick={backButton}>{bagCard.amount > 1 ? "-" : <FaTrash />}</button>
-                            <span style={activeDesc ? Card__footer__amountBag_small : Card__footer__amountBag_medium} className="Card__footer__amountBag">{bagCard.amount}</span>
+                            <button style={activeDesc ? Card__footer__amountBag__sub__small : Card__footer__amountBag__sub__medium} className="Card__footer__amountBag__sub" onClick={backButton}>{amount() > 1 ? "-" : <FaTrash />}</button>
+                            <span style={activeDesc ? Card__footer__amountBag_small : Card__footer__amountBag_medium} className="Card__footer__amountBag">{amount()}</span>
                             <button style={activeDesc ? Card__footer__amountBag__sum__small : Card__footer__amountBag__sum__medium} className="Card__footer__amountBag__sum" onClick={buyButton}>+</button>
                         </Fragment>
-                    } */}
+                    }
                 </footer>
             </article>
         </Fragment>

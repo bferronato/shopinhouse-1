@@ -8,16 +8,17 @@ const ListProducts = () => {
     const [products, setProducts] = useState([]);
     const [activeCard, setActiveCard] = useState('')
 
-    /*  const [bag, setBag] = useState([])
-        const [orderBag, setOrderbag] = useState('')
-        const [operation, setOperation] = useState('') */
+    const [bag, setBag] = useState([])
+    const [orderBag, setOrderbag] = useState('')
+    const [operation, setOperation] = useState('')
 
     fetchProducts().then(function (result) {
         setProducts(result)
     });
 
-    /* useEffect(() => {
+    useEffect(() => {
         const amountBag = []
+
         products.map((item => {
             amountBag.push({id: item.sku, amount: 0})
         }))
@@ -36,7 +37,17 @@ const ListProducts = () => {
             }
         }
         setOrderbag(0)
-    }, [orderBag]) */
+    }, [orderBag]) 
+    
+    /* const bagOrderId = (id) => {
+        let amountBag = {}
+        bag.map((item => {
+            if (id === item.id) {
+                amountBag = {id: id, amount: item.amount}
+                return amountBag
+            }
+        }))
+    } */
 
     {/* <HomeView title="Bem vindo!">
         <div className='list__products'>
@@ -49,9 +60,9 @@ const ListProducts = () => {
         <div className='listProducts'>
             {products.map((item, i) => {
                 if (activeCard.length === 0) {
-                    return <Card product={item} key={i} setActiveCard={setActiveCard} />
+                    return <Card product={item} key={i} bagOrder={bag} setOrderbag={setOrderbag} setOperation={setOperation} setActiveCard={setActiveCard} />
                 } else if (item.sku === activeCard) {
-                    return <Card product={item} key={i} setActiveCard={setActiveCard} />
+                    return <Card product={item} key={i} bagOrder={bag} setOrderbag={setOrderbag} setOperation={setOperation} setActiveCard={setActiveCard} />
                 }
             })}
         </div>
