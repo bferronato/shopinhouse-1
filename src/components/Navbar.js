@@ -6,7 +6,7 @@ function Navbar() {
         <div className="Navbar">
             <div className="firstThird">
                 <div className="logo">
-                    <a href="/home">Shopee</a>
+                    <a href="/">Shopee</a>
                 </div>
             </div>
             <div className="secondThird">
@@ -22,7 +22,7 @@ function Navbar() {
                 <div className="cart">
                     <button type="Button">
                         <span class="material-icons">
-                            shopping_cart
+                        <a href="/shop-cart">shopping_cart</a>
                         </span>
                         <span class="notification">
                             9

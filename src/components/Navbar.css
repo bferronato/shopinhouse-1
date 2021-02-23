@@ -23,8 +23,6 @@
     flex: 35%;
   }
   .logo a {
-    white-space: nowrap;
-    overflow: hidden;
     display: flex;
     text-decoration: none;
     font-weight: bold;
@@ -75,6 +73,11 @@
   
   .cart {
     margin-left: 64px;
+  }
+
+  .cart a {
+    text-decoration: none;
+    color: #8000FF;
   }
   
   .cart button {
