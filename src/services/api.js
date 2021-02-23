@@ -7,7 +7,7 @@ export const fetchProducts = () =>
 export const queryProducts = (term) =>
   new Promise((resolve) => {
     const filtered = PRODUCTS_MOCK.filter(
-      ({ name, description }) => name.includes(term) || description.includes(term),
+      ({ name, description, sku }) => name.includes(term) || description.includes(term) || sku == term,
     );
     const fetch = () => resolve(filtered);
     setTimeout(fetch, 2500);

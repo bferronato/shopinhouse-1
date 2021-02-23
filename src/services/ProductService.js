@@ -12,6 +12,15 @@ class ProductService {
             });
         return productList;
     }
+
+    getProductQuery = async (searchingValue) => {
+        const productList = [];
+        await queryProducts(searchingValue)
+            .then(value => {
+                value.forEach(each => productList.push(Product.mapToProduct(each)))
+            })
+        return productList;
+    }
 }
 
 export default new ProductService();
