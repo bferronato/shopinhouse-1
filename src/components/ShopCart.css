@@ -83,6 +83,10 @@
     color: #000000;
 }
 
+.cart__list__footer__info__subtotal > span {
+    font-size: 16px;
+}
+
 .cart__list__footer__info__button {
     width: 226px;
     height: 44px;

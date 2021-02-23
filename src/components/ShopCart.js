@@ -43,7 +43,7 @@ const ShopCart = () => {
                     <div className="cart__list__footer">
                         <div>&nbsp;</div>
                         <div className="cart__list__footer__info">
-                            <p className="cart__list__footer__info__subtotal">R$ 284,80</p>
+                            <p className="cart__list__footer__info__subtotal"><span>R$ </span>284,80</p>
                             <button className="cart__list__footer__info__button">Finalizar Compra</button>
                         </div>
                     </div>
