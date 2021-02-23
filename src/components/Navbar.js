@@ -13,7 +13,7 @@ function Navbar() {
                 <div className="search">
                     <input placeholder="Buscar...">     
                     </input>
-                    <span class="material-icons">
+                    <span className="material-icons">
                         search
                     </span>
                 </div>
@@ -21,10 +21,10 @@ function Navbar() {
             <div className="thirdThird">
                 <div className="cart">
                     <button type="Button">
-                        <span class="material-icons">
+                        <span className="material-icons">
                         <a href="/shop-cart">shopping_cart</a>
                         </span>
-                        <span class="notification">
+                        <span className="notification">
                             9
                         </span>
                     </button>
