@@ -1,0 +1,1 @@
+export const getListingData = store => store.productReducer.productList;
