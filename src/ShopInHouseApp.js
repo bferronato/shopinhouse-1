@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import Header from './components/Header';
+import Navbar from './components/Navbar';
 import routes from './routes/routes';
 import theme from './styles/theme.css'
 
 const ShopInHouseApp = () => {
     return (
         <div className={'app__root'}>
-            <Header />
+            <Navbar />
             <BrowserRouter
                 basename={process.env.PUBLIC_URL}>
                 <Switch>
