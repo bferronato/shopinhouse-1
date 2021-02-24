@@ -4,15 +4,20 @@ import ShopCart from "../components/ShopCart";
 
 const route = [
     {
-        path: '/',
-        component: ListProducts,
-        exact: true
-    },
-    {
         path: '/cart',
         component: CartView,
         exact: true
     },
+    {
+        path: '/list-products',
+        component: ListProducts,
+        exact: true
+    },
+    // {
+    //     path: '/home',
+    //     component: HomeView,
+    //     exact: true
+    // },
     {
         path: '/shop-cart',
         component: ShopCart,
