@@ -1,9 +1,9 @@
 import React, { Fragment, useState, useEffect } from 'react';
+import PurchaseButtons from './PurchaseButtons'
 import '../styles/Card.css';
 
 
 const Card = ({ product }) => {
-
 
     return (
         <Fragment>
@@ -23,6 +23,9 @@ const Card = ({ product }) => {
                         </span>
                     </section>
                 </section>
+                <footer className="Card__footer__buy">
+                    <PurchaseButtons id={product.sku}/>
+                </footer>
             </article>
         </Fragment>
     );

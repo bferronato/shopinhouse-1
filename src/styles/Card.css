@@ -32,9 +32,22 @@
     font-family: Roboto;
     font-style: normal;
     font-weight: 500;
-    font-size: 18px;
     line-height: 24px;
     color: #000000;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: 1s;
+}
+.Card__section__title:hover {
+    height: 150px;
+    top: 150px;
+    background-color: #fff;
+    border: 2px solid #8000FF;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.13);
+    border-radius: 7px;
+    padding: 2px;
+    animation: animation__title 30s infinite;
 }
 
 .Card__section__price__high {
@@ -68,4 +81,18 @@
     font-size: 12px;
     line-height: 24px;
     color: #000000;
+}
+
+.Card__footer__buy {
+    position: absolute;
+    top: 388px;
+    left: 16px
+}
+
+@keyframes animation__title {
+    5%{
+        text-overflow: unset;
+        overflow: unset;
+        white-space: unset;
+    }
 }

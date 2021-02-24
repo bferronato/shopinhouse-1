@@ -1,6 +1,12 @@
-<footer>
-                <button className="Card__footer__button__buy">Comprar</button>
-                    {/* {amount() < 1 && }
+import React from 'react';
+import '../styles/PurchaseButtons.css'
+
+const PurchaseButtons = ({ id }) => {
+
+    return (
+        <div purchaseButtons__body>
+            <button className="Card__footer__button__buy">Comprar</button>
+            {/* {amount() < 1 && }
                     {amount() >= 1 &&
                         <Fragment>
                             <button style={activeDesc ? Card__footer__amountBag__sub__small : Card__footer__amountBag__sub__medium} className="Card__footer__amountBag__sub" onClick={backButton}>{amount() > 1 ? "-" : <FaTrash />}</button>
@@ -8,4 +14,8 @@
                             <button style={activeDesc ? Card__footer__amountBag__sum__small : Card__footer__amountBag__sum__medium} className="Card__footer__amountBag__sum" onClick={buyButton}>+</button>
                         </Fragment>
                     } */}
-                </footer>
+        </div>
+    );
+};
+
+export default PurchaseButtons;
