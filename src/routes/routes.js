@@ -9,7 +9,7 @@ const route = [
         exact: true
     },
     {
-        path: '/list-products',
+        path: '/',
         component: ListProducts,
         exact: true
     },
