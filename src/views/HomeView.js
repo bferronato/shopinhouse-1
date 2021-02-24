@@ -8,41 +8,10 @@ const HomeView = () => {
     const productList = useSelector(getListingData);
     const dispatch = useDispatch();
 
-    // ! TESTE
-    const cart = useSelector(getCart)
-    const cartAmout = useSelector(getCartAmout)
-    const detailing = useSelector(getDetailingProduct)
-
     // * VÁLIDO
     useEffect(() => {
         dispatch(asyncLoadAll());
     }, [dispatch])
-
-    // ! TESTE
-    useEffect(() => {
-        console.log(productList);
-        if (productList?.length > 0) {
-            dispatch(addToCart(productList[0]))
-            dispatch(addToCart(productList[1]))
-            dispatch(addToCart(productList[2]))
-            dispatch(addToCart(productList[3]))
-            dispatch(incrementAmount(productList[0].id))
-            // dispatch(removeFromCart(productList[1].id))
-            // dispatch(asyncLoadQuery('Dura'))
-            // dispatch(asyncLoadQuery(''))
-            dispatch(asyncLoadQuery(productList[2].id))
-            console.log('DO');
-            dispatch(doCheckout())
-
-        }
-    }, [productList])
-    useEffect(() => {
-        console.log(cart);
-        console.log(cartAmout);
-    }, [cart])
-    useEffect(() => {
-        console.log(detailing);
-    }, [detailing])
 
     return (
         <div className={'home-view__root'}>

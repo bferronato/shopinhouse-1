@@ -1,16 +1,18 @@
 import React, { Fragment, useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom'
 import PurchaseButtons from './PurchaseButtons'
 import '../styles/Card.css';
 
 
 const Card = ({ product }) => {
+    const history = useHistory()
 
     return (
         <Fragment>
             <article className="Card__body">
-                <header><img className="Card__header__img" src={product.image} alt={product.description}/></header>
+                <header><img className="Card__header__img" src={product.imageUrl} alt={product.description} onClick={() => history.push(`/${product.id}`)}/></header>
                 <section>
-                    <header><span className="Card__section__title">{product.name}</span></header>
+                    <header><span className="Card__section__title" onClick={() => history.push(`/${product.id}`)}>{product.name}</span></header>
                     <section>
                         <span className="Card__section__price__high">
                             {"R$ " + String(product.price).substr(0, String(product.price).length - 3)}
@@ -24,7 +26,7 @@ const Card = ({ product }) => {
                     </section>
                 </section>
                 <footer className="Card__footer__buy">
-                    <PurchaseButtons id={product.sku}/>
+                    <PurchaseButtons product={product}/>
                 </footer>
             </article>
         </Fragment>

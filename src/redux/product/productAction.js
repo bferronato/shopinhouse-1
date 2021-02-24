@@ -14,7 +14,6 @@ export const asyncLoadAll = () => {
 };
 
 export const asyncLoadQuery = searchingValue => {
-    console.log(searchingValue);
     return {
         type: productType.ASYNC_LOAD_QUERY,
         payload: searchingValue

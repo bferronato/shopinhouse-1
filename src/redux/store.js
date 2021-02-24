@@ -6,13 +6,13 @@ import rootSaga from './rootSaga';
 const sagaMiddleware = createSagaMiddleWare();
 const storeWithDevTools = compose(
 
-//    ******* VERIFICAR 2 LINHAS ABAIXO *********** //
+    //    ******* VERIFICAR 2 LINHAS ABAIXO *********** //
 
-//     applyMiddleware(sagaMiddleware),
-//     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    applyMiddleware(sagaMiddleware),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 
 )(createStore)(rootReducer);
 
-// sagaMiddleware.run(rootSaga);
+sagaMiddleware.run(rootSaga);
 
 export default storeWithDevTools;
