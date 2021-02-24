@@ -1,5 +1,5 @@
 import React from 'react'
-import HomeView from "../views/HomeView";
+// import HomeView from "../views/HomeView";
 import ProductAmount from "../components/ProductAmount";
 import './ShopCart.css';
 
@@ -90,7 +90,7 @@ const ShopCart = () => {
     }];
 
     return (
-        <HomeView title="Carrinho de compras">
+        // <HomeView title="Carrinho de compras">
             <div className='shop__cart'>
                 <div className="cart__container">
                     <div className="cart__list__header">
@@ -138,7 +138,7 @@ const ShopCart = () => {
 
                 </div>
             </div>
-        </HomeView>
+        // </HomeView>
     );
 }
 
