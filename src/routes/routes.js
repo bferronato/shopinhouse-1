@@ -1,5 +1,6 @@
 import CartView from "../views/CartView";
-import HomeView from "../views/HomeView";
+import ListProducts from "../components/ListProducts";
+import ShopCart from "../components/ShopCart";
 
 const route = [
     {
@@ -8,8 +9,18 @@ const route = [
         exact: true
     },
     {
-        path: '/',
-        component: HomeView,
+        path: '/list-products',
+        component: ListProducts,
+        exact: true
+    },
+    // {
+    //     path: '/home',
+    //     component: HomeView,
+    //     exact: true
+    // },
+    {
+        path: '/shop-cart',
+        component: ShopCart,
         exact: true
     },
 ];

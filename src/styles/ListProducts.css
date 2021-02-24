@@ -1,0 +1,9 @@
+.listProducts {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 120px;
+}
+
+/* retirei o     max-width: 1200px; do .listProducts pros cards ficarem centralizados na página de modo dinâmica */

@@ -52,6 +52,11 @@ const HomeView = () => {
                     <h2 className={'title'}>BEM-VINDO</h2>
                 </div>
 
+                {/* <div className={'app__home'}>
+                    <h1>{props.title}</h1>
+                    {props.children}
+                </div> */}
+
                 <div className={'home-view__content'}>
                     {
                         productList?.map((product, index) =>
