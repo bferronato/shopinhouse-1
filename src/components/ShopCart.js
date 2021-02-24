@@ -1,5 +1,6 @@
 import React from 'react'
 import HomeView from "../views/HomeView";
+import ProductAmount from "../components/ProductAmount";
 import './ShopCart.css';
 
 const ShopCart = () => {
@@ -109,9 +110,15 @@ const ShopCart = () => {
                                         {product.name}
                                     </div>
                                     <div className="cart__list__body__product">
-                                        <div>{product.price}</div>
-                                        <div>1XX</div>
-                                        <div>249,00XX</div>
+                                        <div>
+                                            {product.price.toLocaleString("pt-BR",
+                                                { minimumFractionDigits: 2, style: 'currency', currency: 'BRL' }
+                                            )}
+                                        </div>
+                                        <div>
+                                            <ProductAmount product={product}/>
+                                        </div>
+                                        <div className="cart__list__body__product__subtotal">249,00xx</div>
                                     </div>
                                 </div>
                                 {cart.length - 1 > i &&

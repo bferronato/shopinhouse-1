@@ -1,0 +1,4 @@
+.product__amount__container {
+    display: flex;
+    justify-content:space-between;
+}

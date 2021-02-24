@@ -52,6 +52,14 @@
     padding: 16px 0;
 }
 
+.cart__list__body__product__subtotal {
+    text-align: right;
+}
+
+.cart__list__body__product > div {
+    width: 100%
+}
+
 .cart__list__body__divider {
     border: 1px solid #f1f1f1;
     line-height: 24px;
