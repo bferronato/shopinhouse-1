@@ -1,32 +1,35 @@
 
+import React from 'react'
 import { FaTrash } from 'react-icons/fa';
+import { useDispatch } from 'react-redux';
+import { incrementAmount, decrementAmount } from '../redux/product/productAction';
 import './ProductAmount.css';
 
 const ProductAmount = (props) => {
 
-    let product = { ...props.product, amount: 2 };
+    const dispatch = useDispatch();
 
-    const incrementAmount = () => {
-        console.log("Adicionar")
+    const increment = (product) => {
+        dispatch(incrementAmount(product.id));
     }
 
-    const decrementAmount = () => {
-        console.log("Subtrair")
+    const decrement = (product) => {
+        dispatch(decrementAmount(product.id));
     }
 
     return (
         <div className="product__amount__container">
             <button
                 className="product__amount__sub"
-                onClick={() => decrementAmount()}
-            >{product.amount > 1 ? "-" : <FaTrash />}
+                onClick={() => decrement(props.product)}
+            >{props.product.cartAmount > 1 ? "-" : <FaTrash />}
             </button>
             <div className="product__amount">
-                {product.amount}
+                {props.product.cartAmount}
             </div>
             <button
                 className="product__amount__sum"
-                onClick={() => incrementAmount()}
+                onClick={() => increment(props.product)}
             >+</button>
         </div>
     )
