@@ -12,9 +12,9 @@ const ShopInHouseApp = () => {
             <Provider
                 store={store}>
                 {/* <Header /> */}
-                <Navbar />
                 <BrowserRouter
                     basename={process.env.PUBLIC_URL}>
+                    <Navbar />
                     <Switch>
                         {routes.map(route => (
                             <Route

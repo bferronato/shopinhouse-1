@@ -13,11 +13,6 @@ const route = [
         component: ListProducts,
         exact: true
     },
-    // {
-    //     path: '/home',
-    //     component: HomeView,
-    //     exact: true
-    // },
     {
         path: '/shop-cart',
         component: ShopCart,
