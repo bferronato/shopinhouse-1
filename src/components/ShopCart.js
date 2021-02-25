@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { getCart } from '../redux/product/productSelector';
 import ProductAmount from "../components/ProductAmount";
 import './ShopCart.css';
+import PurchaseButtons from './PurchaseButtons';
 
 const ShopCart = () => {
 
@@ -49,9 +50,10 @@ const ShopCart = () => {
                                             { minimumFractionDigits: 2, style: 'currency', currency: 'BRL' }
                                         )}
                                     </div>
-                                    <div>
+                                    {/* <div>
                                         <ProductAmount product={product} />
-                                    </div>
+                                    </div> */}
+                                    <PurchaseButtons  product={product}/>
                                     <div className="cart__list__body__product__subtotal">
                                         {
                                             (product.price * product.cartAmount)
@@ -68,7 +70,7 @@ const ShopCart = () => {
                         </React.Fragment>
                     ))}
                 </div>
-
+                
                 <div className="cart__list__footer">
                     <div>&nbsp;</div>
                     <div className="cart__list__footer__info">
