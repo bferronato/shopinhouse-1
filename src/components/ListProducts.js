@@ -11,10 +11,10 @@ const ListProducts = () => {
     const products = useSelector(getListingData)
     const dispatch = useDispatch()
 
-    useEffect(() => { 
-        dispatch(asyncLoadAll()); 
+    useEffect(() => {
+        dispatch(asyncLoadAll());
     }, [dispatch])
-  
+
     return (
         <Fragment>
             <h1 className="ListProducts__title">Bem vindo!</h1>

@@ -28,16 +28,25 @@ export function productReducer(state = INITIAL_STATE, action) {
             const incrementingItem = state.cart.find(cartItem => cartItem.id === action.payload);
             incrementingItem.cartAmount++;
             break;
+        case productType.IS_LOADING:
+            return {
+                ...state,
+                isLoading: true
+            };
         case productType.LOAD_ALL:
             return {
                 ...state,
+                isLoading: false,
                 productList: action.payload
             };
         case productType.LOAD_QUERY:
             typeof action.searchedValue === 'number' ?
                 state.detailingProduct = action.payload.pop() :
                 state.productList = action.payload;
-            break;
+            return {
+                ...state,
+                isLoading: false,
+            };
         case productType.REMOVE_FROM_CART:
             state.cart = state.cart.filter(cartItem => cartItem.id != action.payload);
             break;
