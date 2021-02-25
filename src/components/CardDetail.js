@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import PurchaseButtons from './PurchaseButtons';
-import '../styles/Card.css';
+import '../styles/CardDetail.css';
 
 const Card = ({ product }) => {
   return (
