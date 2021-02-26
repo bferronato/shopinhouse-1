@@ -4,7 +4,6 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Navbar from './components/Navbar';
 import routes from './routes/routes';
 import store from './redux/store';
-import theme from './styles/theme.css'
 
 const ShopInHouseApp = () => {
     return (
@@ -12,9 +11,9 @@ const ShopInHouseApp = () => {
             <Provider
                 store={store}>
                 {/* <Header /> */}
-                <Navbar />
                 <BrowserRouter
                     basename={process.env.PUBLIC_URL}>
+                    <Navbar />
                     <Switch>
                         {routes.map(route => (
                             <Route

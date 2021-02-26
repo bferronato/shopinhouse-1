@@ -1,19 +1,59 @@
-import React from 'react';
+import React, { useEffect, Fragment, useState } from 'react';
 import '../styles/PurchaseButtons.css'
+import { FaTrash } from 'react-icons/fa'
+import { useSelector, useDispatch } from 'react-redux';
+import { addToCart, incrementAmount, decrementAmount, removeFromCart } from '../redux/product/productAction'
+import { getCart } from '../redux/product/productSelector'
 
-const PurchaseButtons = ({ id }) => {
+const PurchaseButtons = ({ product }) => {
+
+    const dispatch = useDispatch();
+    const cart = useSelector(getCart)
+    const [amount , setAmount] = useState(0)
+
+    useEffect(() => {
+        setAmount(cart.filter(item => item.id === product.id).map(item => item.cartAmount))
+    }, [])
+
+    function handleAdd(product) {
+        dispatch(addToCart(product))
+        setAmount(1)
+    };
+
+    function handleIncrement(product) {
+        dispatch(incrementAmount(product.id))
+
+        setAmount(cart.filter(item => item.id === product.id).map(item => item.cartAmount))
+    }
+
+    function handleDecrement(product) {
+        dispatch(decrementAmount(product.id))
+
+        setAmount(cart.filter(item => item.id === product.id).map(item => item.cartAmount))
+    }
+
+    function handleRemoval(product) {
+        dispatch(removeFromCart(product.id))
+    }
+
+    const firstRequest = () => {
+        let request = true
+
+        cart.map((item) => {if (item.id === product.id) {request = false }})
+
+        return request
+    }
 
     return (
-        <div purchaseButtons__body>
-            <button className="Card__footer__button__buy">Comprar</button>
-            {/* {amount() < 1 && }
-                    {amount() >= 1 &&
-                        <Fragment>
-                            <button style={activeDesc ? Card__footer__amountBag__sub__small : Card__footer__amountBag__sub__medium} className="Card__footer__amountBag__sub" onClick={backButton}>{amount() > 1 ? "-" : <FaTrash />}</button>
-                            <span style={activeDesc ? Card__footer__amountBag_small : Card__footer__amountBag_medium} className="Card__footer__amountBag">{amount()}</span>
-                            <button style={activeDesc ? Card__footer__amountBag__sum__small : Card__footer__amountBag__sum__medium} className="Card__footer__amountBag__sum" onClick={buyButton}>+</button>
-                        </Fragment>
-                    } */}
+        <div className="purchaseButtons__body">
+            {firstRequest() && <button className="Card__footer__button__buy" onClick={() => handleAdd(product)}>Comprar</button>}
+            {!firstRequest() &&
+                <Fragment>
+                    <button className="Card__footer__amountBag__sub" onClick={() => amount > 1 ? handleDecrement(product) : handleRemoval(product)}>{amount > 1 ? "-" : <FaTrash />}</button>
+                    <span className="Card__footer__amountBag">{amount}</span>
+                    <button  className="Card__footer__amountBag__sum" onClick={() => handleIncrement(product)}>+</button>
+                </Fragment>
+            }
         </div>
     );
 };
