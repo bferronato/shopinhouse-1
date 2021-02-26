@@ -108,4 +108,5 @@
     border: unset;
     border-radius: 4px;
     outline: unset;
+    cursor: pointer;
 }

@@ -71,7 +71,7 @@ const ShopCart = () => {
                     <div>&nbsp;</div>
                     <div className="cart__list__footer__info">
                         <p className="cart__list__footer__info__subtotal">
-                            <span>R$ </span>{amount.toLocaleString("pt-BR",
+                            {amount.toLocaleString("pt-BR",
                                 { minimumFractionDigits: 2, style: 'currency', currency: 'BRL' }
                             )}
                         </p>
