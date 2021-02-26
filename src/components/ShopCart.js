@@ -1,21 +1,27 @@
 import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { getCart } from '../redux/product/productSelector';
+import { doCheckout } from '../redux/product/productAction';
 import './ShopCart.css';
 import PurchaseButtons from './PurchaseButtons';
 
 const ShopCart = () => {
 
+    const dispatch = useDispatch();
     const cart = useSelector(getCart);
-
-    const [amount, setAmount] = useState(0)
+    const [amount, setAmount] = useState(0);
 
     useEffect(() => {
         const total = cart.reduce(function (totalizer, cartItem) {
             return totalizer + (cartItem.price * cartItem.cartAmount);
         }, 0)
         setAmount(total);
-    }, [cart])
+    }, [cart]);
+
+    const checkout = () => {
+        alert("A compra foi processada com sucesso, Obrigado!")
+        dispatch(doCheckout())
+    };
 
     return (
         // <HomeView title="Carrinho de compras">
@@ -69,7 +75,7 @@ const ShopCart = () => {
                                 { minimumFractionDigits: 2, style: 'currency', currency: 'BRL' }
                             )}
                         </p>
-                        <button className="cart__list__footer__info__button">Finalizar Compra</button>
+                        <button className="cart__list__footer__info__button" onClick={() => checkout()}>Finalizar Compra</button>
                     </div>
                 </div>
 
