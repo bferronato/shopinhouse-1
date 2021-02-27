@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { getCart } from '../redux/product/productSelector';
 import { doCheckout } from '../redux/product/productAction';
@@ -9,17 +9,11 @@ import ShopCartTotal from './ShopCartTotal';
 const ShopCart = () => {
 
     const dispatch = useDispatch();
-    const cartSelector = useSelector(getCart);
-
-    const [cart, setCart] = useState(cartSelector);
+    const cart = useSelector(getCart);
 
     // Forca a renderizacao da tela ..
     const [, updateState] = React.useState();
     const forceUpdate = React.useCallback(() => updateState({}), []);
-
-    useEffect(() => {
-        setCart(cart);
-    }, [cart]);
 
     const checkout = () => {
         alert("A compra foi processada com sucesso, Obrigado!");
@@ -52,7 +46,7 @@ const ShopCart = () => {
                                             { minimumFractionDigits: 2, style: 'currency', currency: 'BRL' }
                                         )}
                                     </div>
-                                    <PurchaseButtons product={product} forceUpdate={forceUpdate} />
+                                    <PurchaseButtons product={product} forceUpdate={forceUpdate}/>
                                     <div className="cart__list__body__product__subtotal">
                                         {(product.price * product.cartAmount)
                                             .toLocaleString("pt-BR",
