@@ -14,7 +14,7 @@ const Card = ({ product }) => {
             className="Card__header__img"
             src={product.imageUrl}
             alt={product.description}
-            onClick={() => history.push(`/${product.id}`)}
+            onClick={() => history.push(`/detail/${product.id}`, product.id)}
           />
         </header>
         <section>

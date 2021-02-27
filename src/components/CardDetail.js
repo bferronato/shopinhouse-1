@@ -1,8 +1,21 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import PurchaseButtons from './PurchaseButtons';
 import '../styles/CardDetail.css';
+import { useHistory, useLocation } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { asyncLoadQuery } from '../redux/product/productAction';
+import { getDetailingProduct } from '../redux/product/productSelector';
 
-const CardDetail = ({ product }) => {
+const CardDetail = () => {
+  const history = useHistory();
+  const location = useLocation();
+  const product = useSelector(getDetailingProduct);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(asyncLoadQuery(location.state));
+  }, []);
+
   return (
     <Fragment>
       <article className="CardDetail__body">
@@ -21,11 +34,10 @@ const CardDetail = ({ product }) => {
           </header>
           <section>
             <span className="CardDetail__section__price__high">
-              {'R$ ' +
-                String(product.price).substr(
-                  0,
-                  String(product.price).length - 3,
-                )}
+              {String(product.price).substr(
+                0,
+                String(product.price).length - 3,
+              )}
               <span className="CardDetail__section__price__small">
                 {',' +
                   String(product.price).substr(
@@ -43,7 +55,7 @@ const CardDetail = ({ product }) => {
           </section>
         </section>
         <footer className="CardDetail__footer__buy">
-          <PurchaseButtons id={product.sku} />
+          <PurchaseButtons product={product} />
         </footer>
       </article>
     </Fragment>

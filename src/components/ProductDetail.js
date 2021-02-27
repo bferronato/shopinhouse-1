@@ -9,20 +9,21 @@ const ProductDetail = () => {
     43900,
     'Duracell - AAA Batteries (4-Pack)',
     'HardGood',
+    'http://img.bbystatic.com/BestBuy_US/images/products/4390/43900_sa.jpg',
     5.49,
     [
-      { id: 'pcmcat312300050015', name: 'Connected Home & Housewares' },
       { id: 'pcmcat248700050021', name: 'Housewares' },
       { id: 'pcmcat303600050001', name: 'Household Batteries' },
       { id: 'abcat0208002', name: 'Alkaline Batteries' },
     ],
   );
+  // console.log(product);
 
   return (
     <Fragment>
       {/* <h1 className="ProductDetail__title">{product.name}</h1> */}
       <div className="ProductDetail">
-        <CardDetail key={product} product={product.price}></CardDetail>
+        <CardDetail key={product} product={product}></CardDetail>
       </div>
     </Fragment>
   );
