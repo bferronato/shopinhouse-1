@@ -1,28 +1,27 @@
-import React from 'react'
-import { useSelector } from 'react-redux';
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import { getCart } from '../redux/product/productSelector';
-import ProductAmount from "../components/ProductAmount";
+import { doCheckout } from '../redux/product/productAction';
 import './ShopCart.css';
 import PurchaseButtons from './PurchaseButtons';
 
 const ShopCart = () => {
 
+    const dispatch = useDispatch();
     const cart = useSelector(getCart);
+    const [amount, setAmount] = useState(0);
 
-    console.log(cart)
+    useEffect(() => {
+        const total = cart.reduce(function (totalizer, cartItem) {
+            return totalizer + (cartItem.price * cartItem.cartAmount);
+        }, 0)
+        setAmount(total);
+    }, [cart]);
 
-    // const dispatch = useDispatch();
-
-    // useEffect(() =>
-    //     dispatch(addToCart({
-    //         id: 1,
-    //         name: 'Duracell - AAAWWWWW Batteries (4-Pack)',
-    //         description: 'teste',
-    //         imageUrl: 'httt',
-    //         price: '12.23',
-    //         categoryList: '22'
-    //     }))
-    // ,[]);
+    const checkout = () => {
+        alert("A compra foi processada com sucesso, Obrigado!")
+        dispatch(doCheckout())
+    };
 
     return (
         // <HomeView title="Carrinho de compras">
@@ -50,10 +49,7 @@ const ShopCart = () => {
                                             { minimumFractionDigits: 2, style: 'currency', currency: 'BRL' }
                                         )}
                                     </div>
-                                    {/* <div>
-                                        <ProductAmount product={product} />
-                                    </div> */}
-                                    <PurchaseButtons  product={product}/>
+                                    <PurchaseButtons product={product} />
                                     <div className="cart__list__body__product__subtotal">
                                         {
                                             (product.price * product.cartAmount)
@@ -70,12 +66,16 @@ const ShopCart = () => {
                         </React.Fragment>
                     ))}
                 </div>
-                
+
                 <div className="cart__list__footer">
                     <div>&nbsp;</div>
                     <div className="cart__list__footer__info">
-                        <p className="cart__list__footer__info__subtotal"><span>R$ </span>284,80</p>
-                        <button className="cart__list__footer__info__button">Finalizar Compra</button>
+                        <p className="cart__list__footer__info__subtotal">
+                            {amount.toLocaleString("pt-BR",
+                                { minimumFractionDigits: 2, style: 'currency', currency: 'BRL' }
+                            )}
+                        </p>
+                        <button className="cart__list__footer__info__button" onClick={() => checkout()}>Finalizar Compra</button>
                     </div>
                 </div>
 
