@@ -36,7 +36,6 @@ const PurchaseButtons = ({ product, forceUpdate = null }) => {
 
     function handleRemoval(product1) {
         dispatch(removeFromCart(product1.id))
-        if (forceUpdate) forceUpdate();
     }
 
     const firstRequest = () => {
