@@ -22,7 +22,10 @@
     justify-content: left;
     flex: 35%;
   }
+
   .logo a {
+    cursor: pointer;
+    width: fit-content;
     display: flex;
     text-decoration: none;
     font-weight: bold;
@@ -79,8 +82,10 @@
     text-decoration: none;
     color: #8000FF;
   }
-  
+
+
   .cart button {
+    cursor: pointer;
     display: flex;
     width: 52px;
     height: 52px;

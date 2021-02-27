@@ -26,6 +26,7 @@ function Navbar(props) {
                 <div className="cart">
                     <button onClick={() => history.push("/shop-cart") } type="Button">
                         <span className="material-icons">
+                            shopping_cart
                         </span>
                         <span className="notification">
                             9
