@@ -4,23 +4,26 @@ import { getCart } from '../redux/product/productSelector';
 import { doCheckout } from '../redux/product/productAction';
 import './ShopCart.css';
 import PurchaseButtons from './PurchaseButtons';
+import ShopCartTotal from './ShopCartTotal';
 
 const ShopCart = () => {
 
     const dispatch = useDispatch();
-    const cart = useSelector(getCart);
-    const [amount, setAmount] = useState(0);
+    const cartSelector = useSelector(getCart);
+
+    const [cart, setCart] = useState(cartSelector);
+
+    // Forca a renderizacao da tela ..
+    const [, updateState] = React.useState();
+    const forceUpdate = React.useCallback(() => updateState({}), []);
 
     useEffect(() => {
-        const total = cart.reduce(function (totalizer, cartItem) {
-            return totalizer + (cartItem.price * cartItem.cartAmount);
-        }, 0)
-        setAmount(total);
+        setCart(cart);
     }, [cart]);
 
     const checkout = () => {
-        alert("A compra foi processada com sucesso, Obrigado!")
-        dispatch(doCheckout())
+        alert("A compra foi processada com sucesso, Obrigado!");
+        dispatch(doCheckout());
     };
 
     return (
@@ -49,14 +52,12 @@ const ShopCart = () => {
                                             { minimumFractionDigits: 2, style: 'currency', currency: 'BRL' }
                                         )}
                                     </div>
-                                    <PurchaseButtons product={product} />
+                                    <PurchaseButtons product={product} forceUpdate={forceUpdate} />
                                     <div className="cart__list__body__product__subtotal">
-                                        {
-                                            (product.price * product.cartAmount)
-                                                .toLocaleString("pt-BR",
-                                                    { minimumFractionDigits: 2, style: 'currency', currency: 'BRL' }
-                                                )
-                                        }
+                                        {(product.price * product.cartAmount)
+                                            .toLocaleString("pt-BR",
+                                                { minimumFractionDigits: 2, style: 'currency', currency: 'BRL' }
+                                            )}
                                     </div>
                                 </div>
                             </div>
@@ -70,11 +71,7 @@ const ShopCart = () => {
                 <div className="cart__list__footer">
                     <div>&nbsp;</div>
                     <div className="cart__list__footer__info">
-                        <p className="cart__list__footer__info__subtotal">
-                            {amount.toLocaleString("pt-BR",
-                                { minimumFractionDigits: 2, style: 'currency', currency: 'BRL' }
-                            )}
-                        </p>
+                        <ShopCartTotal cart={cart} />
                         <button className="cart__list__footer__info__button" onClick={() => checkout()}>Finalizar Compra</button>
                     </div>
                 </div>

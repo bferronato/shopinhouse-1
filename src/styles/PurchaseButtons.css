@@ -61,6 +61,7 @@
     border: unset;
     border-radius: 4px;
     outline: unset;
+    cursor: pointer;
 }
 
 .Card__footer__amountBag__sum {
@@ -81,4 +82,5 @@
     outline: unset;
     animation: all 10s;
     animation-delay: 10s;
+    cursor: pointer;
 }
