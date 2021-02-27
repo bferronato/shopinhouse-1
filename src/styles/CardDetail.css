@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-.Card__body {
+.CardDetail__body {
   position: relative;
   width: 1128px;
   height: 260px;
@@ -11,21 +11,19 @@
   background: #ffffff;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.13);
   border-radius: 7px;
-  margin-left: 32px;
+  margin-left: 156px;
   margin-bottom: 32px;
 }
 
-.Card__header__img {
+.CardDetail__header__img {
   position: absolute;
   width: 195px;
   height: 195px;
-  left: 188px;
-  top: 222px;
-  background-repeat: no-repeat;
-  background-size: cover;
+  left: 39px;
+  top: 34px;
 }
 
-.Card__section__title {
+.CardDetail__section__description {
   position: absolute;
   width: 400px;
   height: 24px;
@@ -37,12 +35,13 @@
   font-size: 16px;
   line-height: 24px;
   color: #000000;
+
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
   transition: 1s;
 }
-.Card__section__title:hover {
+.CardDetail__section__description:hover {
   height: 150px;
   top: 150px;
   background-color: #fff;
@@ -53,12 +52,12 @@
   animation: animation__title 30s infinite;
 }
 
-.Card__section__price__high {
+.CardDetail__section__price__high {
   position: absolute;
-  width: 200px;
+  width: 74px;
   height: 24px;
-  top: 322px;
-  left: 16px;
+  left: 415px;
+  top: 286px;
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
@@ -67,16 +66,16 @@
   color: #000000;
 }
 
-.Card__section__price__small {
+.CardDetail__section__price__small {
   font-size: 14px;
 }
 
-.Card__section__installments {
+.CardDetail__section__installments {
   position: absolute;
   width: 239px;
   height: 24px;
-  top: 348px;
-  left: 16px;
+  left: 415px;
+  top: 318px;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -85,10 +84,10 @@
   color: #000000;
 }
 
-.Card__footer__buy {
+.CardDetail__footer__buy {
   position: absolute;
-  top: 388px;
-  left: 16px;
+  top: 184px;
+  left: 259px;
 }
 
 @keyframes animation__title {

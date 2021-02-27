@@ -1,11 +1,11 @@
 import { useState, useEffect, Fragment } from 'react';
 import { fetchProducts } from '../services/api';
 import CardDetail from '../components/CardDetail';
-import '../styles/ListProducts.css';
+import '../styles/ProductDetail.css';
 import Product from '../models/Product';
 
 const ProductDetail = () => {
-  const produto = new Product(
+  const product = new Product(
     43900,
     'Duracell - AAA Batteries (4-Pack)',
     'HardGood',
@@ -20,9 +20,9 @@ const ProductDetail = () => {
 
   return (
     <Fragment>
-      <h1 className="ListProducts__title">{produto.name}</h1>
-      <div className="listProducts">
-        <CardDetail key={produto} product={produto}></CardDetail>
+      {/* <h1 className="ProductDetail__title">{product.name}</h1> */}
+      <div className="ProductDetail">
+        <CardDetail key={product} product={product.price}></CardDetail>
       </div>
     </Fragment>
   );
