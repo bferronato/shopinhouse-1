@@ -1,9 +1,11 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom';
 import './Navbar.css'
+import { useState } from 'react';
 
 function Navbar(props) {
 
+    const [search, setSearch] = useState('')
     const history = useHistory();
 
     return (
@@ -15,8 +17,9 @@ function Navbar(props) {
             </div>
             <div className="secondThird">
                 <div className="search">
-                    <input placeholder="Buscar...">
+                    <input value={search} onChange={e => setSearch(e.target.value)} >
                     </input>
+                    <div>Resultados para {search}</div>
                     <span className="material-icons">
                         search
                     </span>
@@ -26,6 +29,7 @@ function Navbar(props) {
                 <div className="cart">
                     <button onClick={() => history.push("/shop-cart") } type="Button">
                         <span className="material-icons">
+                            shopping_cart
                         </span>
                         <span className="notification">
                             9
