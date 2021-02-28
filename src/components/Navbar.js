@@ -1,12 +1,15 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-
+import { getCartAmout } from '../redux/product/productSelector';
 import './Navbar.css';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 function Navbar(props) {
   const [search, setSearch] = useState('');
   const history = useHistory();
+
+  const carAmount = useSelector(getCartAmout);
 
   return (
     <div className="Navbar">
@@ -29,7 +32,7 @@ function Navbar(props) {
         <div className="cart">
           <button onClick={() => history.push('/shop-cart')} type="Button">
             <span className="material-icons">shopping_cart</span>
-            <span className="notification">9</span>
+            <span className="notification">{carAmount}</span>
           </button>
         </div>
       </div>
