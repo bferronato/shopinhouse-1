@@ -36,13 +36,13 @@
   }
 
   .feedback {
-    line-height: 24px;
-    margin-top: 32px;
+    z-index: -1;
+    margin-top: 30px;
     position: absolute;
     color: #000000;
     font-weight: 500;
-    font-size: 48px;
-    padding-left: 156px;
+    font-size: 47px;
+    padding-left: 157px;
     white-space: nowrap;
   }
   

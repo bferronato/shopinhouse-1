@@ -1,11 +1,16 @@
 .base__title {
+    z-index: -1;
+    background-color: #e5e5e5;
     margin: 32px 0 64px 160px;
     font-family: Roboto;
     font-style: normal;
     font-weight: 500;
     font-size: 48px;
-    line-height: 24px;
     color: #000000;
+}
+
+.base__title h1 {
+    height: 30px;
 }
 
 .base__container {
