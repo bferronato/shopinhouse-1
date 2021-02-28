@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { getCart } from '../redux/product/productSelector';
+import { getCart, getCartAmout } from '../redux/product/productSelector';
 import { doCheckout } from '../redux/product/productAction';
 import BaseView from '../views/BaseView';
 import './ShopCart.css';
@@ -11,14 +11,20 @@ const ShopCart = () => {
 
     const dispatch = useDispatch();
     const cart = useSelector(getCart);
+    const carAmount = useSelector(getCartAmout);
 
     // Forca a renderizacao da tela ..
     const [, updateState] = React.useState();
     const forceUpdate = React.useCallback(() => updateState({}), []);
 
     const checkout = () => {
-        alert("A compra foi processada com sucesso, Obrigado!");
-        dispatch(doCheckout());
+        if (carAmount === 0) {
+            alert("Você não possui itens no seu carrinho.");
+            return;
+        } else {
+            alert("A compra foi processada com sucesso, Obrigado!");
+            dispatch(doCheckout());
+        }
     };
 
     return (

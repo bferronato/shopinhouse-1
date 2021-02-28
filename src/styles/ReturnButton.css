@@ -1,11 +1,14 @@
 .returnButton__body {
   position: relative;
-  width: 226px;
+  display: flex;
+  width: 1128px;
   height: 44px;
+  align-items: flex-end;
+  flex-direction: column;
+  margin-top: 32px;
 }
 
 .Card__footer__button__return {
-  position: absolute;
   width: 226px;
   height: 44px;
   top: 498px;
@@ -20,6 +23,7 @@
   border: unset;
   border-radius: 4px;
   outline: unset;
+  cursor: pointer;
 }
 
 .Card__footer__button__return:active {
