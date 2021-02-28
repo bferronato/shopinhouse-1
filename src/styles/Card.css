@@ -1,98 +1,95 @@
-
-
 .Card__body {
-    position: relative;
-    width: 258px;
-    height: 448px;
-    Top: 190px;
+  position: relative;
+  width: 258px;
+  height: 448px;
+  top: 190px;
 
-    background: #FFFFFF;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.13);
-    border-radius: 7px;
-    margin-left: 32px;
-    margin-bottom: 32px;
+  background: #ffffff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.13);
+  border-radius: 7px;
+  margin-left: 32px;
+  margin-bottom: 32px;
 }
 
 .Card__header__img {
-    position: absolute;
-    width: 226px;
-    height: 226px;
-    top: 10px;
-    left: 16px;
-    background-repeat: no-repeat;
-    background-size: cover;
+  position: absolute;
+  width: 226px;
+  height: 226px;
+  top: 10px;
+  left: 16px;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .Card__section__title {
-    position: absolute;
-    width: 215px;
-    height: 48px;
-    left: 16px;
-    top: 252px;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 24px;
-    color: #000000;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-    transition: 1s;
+  position: absolute;
+  width: 215px;
+  height: 48px;
+  left: 16px;
+  top: 252px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  color: #000000;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: 1s;
 }
 .Card__section__title:hover {
-    height: 150px;
-    top: 150px;
-    background-color: #fff;
-    border: 2px solid #8000FF;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.13);
-    border-radius: 7px;
-    padding: 2px;
-    animation: animation__title 30s infinite;
+  height: 150px;
+  top: 150px;
+  background-color: #fff;
+  border: 2px solid #8000ff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.13);
+  border-radius: 7px;
+  padding: 2px;
+  animation: animation__title 30s infinite;
 }
 
 .Card__section__price__high {
-    position: absolute;
-    width: 200px;
-    height: 24px;
-    top: 322px;
-    left: 16px;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 32px;
-    line-height: 24px;
-    color: #000000;
-    
+  position: absolute;
+  width: 200px;
+  height: 24px;
+  top: 322px;
+  left: 16px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 24px;
+  color: #000000;
 }
 
 .Card__section__price__small {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .Card__section__installments {
-    position: absolute;
-    width: 239px;
-    height: 24px;
-    top: 348px;
-    left: 16px;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 24px;
-    color: #000000;
+  position: absolute;
+  width: 239px;
+  height: 24px;
+  top: 348px;
+  left: 16px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 24px;
+  color: #000000;
 }
 
 .Card__footer__buy {
-    position: absolute;
-    top: 388px;
-    left: 16px
+  position: absolute;
+  top: 388px;
+  left: 16px;
 }
 
 @keyframes animation__title {
-    5%{
-        text-overflow: unset;
-        overflow: unset;
-        white-space: unset;
-    }
+  5% {
+    text-overflow: unset;
+    overflow: unset;
+    white-space: unset;
+  }
 }
