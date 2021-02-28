@@ -23,6 +23,7 @@ function Navbar(props) {
           <input
             value={search}
             onChange={(e) => setSearch(e.target.value)}
+            placeholder = "Buscar...."
           ></input>
           {/* <div>Resultados para {search}</div> */}
           <span className="material-icons">search</span>
