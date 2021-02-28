@@ -24,7 +24,7 @@ function Navbar(props) {
 
       <div className="firstThird">
         <div className="logo">
-          <a onClick={() => history.push('/')}>Shopee</a>
+          <a onClick={() => history.go(0)}>Shopee</a>
           <div className="feedback">{titulo}</div> { /* Precisa deixar o valor default como "Bem vindo!" e renderizar o feedback somente na view principal/homepage */}
         </div>
         
