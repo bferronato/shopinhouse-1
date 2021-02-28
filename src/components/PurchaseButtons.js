@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { addToCart, incrementAmount, decrementAmount, removeFromCart } from '../redux/product/productAction'
 import { getCart } from '../redux/product/productSelector'
 
-const PurchaseButtons = ({ product, forceUpdate = null }) => {
+const PurchaseButtons = ({ product}) => {
 
     const dispatch = useDispatch();
     const cart = useSelector(getCart)
@@ -24,14 +24,12 @@ const PurchaseButtons = ({ product, forceUpdate = null }) => {
         dispatch(incrementAmount(product.id))
 
         setAmount(cart.filter(item => item.id === product.id).map(item => item.cartAmount))
-        if (forceUpdate) forceUpdate();
     }
 
     function handleDecrement(product) {
         dispatch(decrementAmount(product.id))
 
         setAmount(cart.filter(item => item.id === product.id).map(item => item.cartAmount))
-        if (forceUpdate) forceUpdate();
     }
 
     function handleRemoval(product1) {

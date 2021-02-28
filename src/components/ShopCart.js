@@ -12,10 +12,6 @@ const ShopCart = () => {
     const dispatch = useDispatch();
     const cart = useSelector(getCart);
 
-    // Forca a renderizacao da tela ..
-    const [, updateState] = React.useState();
-    const forceUpdate = React.useCallback(() => updateState({}), []);
-
     const checkout = () => {
         alert("A compra foi processada com sucesso, Obrigado!");
         dispatch(doCheckout());
@@ -51,7 +47,7 @@ const ShopCart = () => {
                                                     { minimumFractionDigits: 2, style: 'currency', currency: 'BRL' }
                                                 )}
                                             </div>
-                                            <PurchaseButtons product={product} forceUpdate={forceUpdate} />
+                                            <PurchaseButtons product={product} />
                                             <div className="cart__list__body__product__subtotal">
                                                 {(product.price * product.cartAmount)
                                                     .toLocaleString("pt-BR",
