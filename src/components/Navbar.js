@@ -11,12 +11,11 @@ function Navbar(props) {
   const [titulo, setTitulo] = useState("Bem vindo")
   const history = useHistory();
   const carAmount = useSelector(getCartAmout);
-  const isLoading = useSelector(getIsLoading);
   const dispatch = useDispatch();
 
 
   useEffect(() => {
-    if (pesquisa.length === 0) {setTitulo("Bem vindo")} else {setTitulo(`Resultados para "${pesquisa}"`)
+    if (pesquisa.length === 0) {setTitulo("Bem vindo!")} else {setTitulo(`Resultados para "${pesquisa}"`)
     }} ,[pesquisa])
 
 
@@ -26,9 +25,9 @@ function Navbar(props) {
       <div className="firstThird">
         <div className="logo">
           <a onClick={() => history.push('/')}>Shopee</a>
-          <div className="feedback">Resultados para {pesquisa}</div> { /* Precisa deixar o valor default como "Bem vindo!" e renderizar o feedback somente na view principal/homepage */}
+          <div className="feedback">{titulo}</div> { /* Precisa deixar o valor default como "Bem vindo!" e renderizar o feedback somente na view principal/homepage */}
         </div>
-        <div>{titulo}</div>
+        
       </div>
 
       <div className="secondThird">
