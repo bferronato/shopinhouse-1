@@ -1,4 +1,4 @@
-.App {
+.index {
     width: 100vw;
     height: 100vh
   }
@@ -22,9 +22,10 @@
     justify-content: left;
     flex: 35%;
   }
+
   .logo a {
-    white-space: nowrap;
-    overflow: hidden;
+    cursor: pointer;
+    width: fit-content;
     display: flex;
     text-decoration: none;
     font-weight: bold;
@@ -32,6 +33,17 @@
     letter-spacing: 0.1em;
     color: #8000FF;
     margin: 12px 34px 12px 64px;
+  }
+
+  .feedback {
+    z-index: -1;
+    margin-top: 30px;
+    position: absolute;
+    color: #000000;
+    font-weight: 500;
+    font-size: 47px;
+    padding-left: 157px;
+    white-space: nowrap;
   }
   
   .secondThird {
@@ -59,6 +71,9 @@
     font-size: 32px;
   }
   
+  .material-icons:hover {
+    cursor: pointer;
+  }
   
   .search {
     position: relative;
@@ -76,8 +91,15 @@
   .cart {
     margin-left: 64px;
   }
-  
+
+  .cart a {
+    text-decoration: none;
+    color: #8000FF;
+  }
+
+
   .cart button {
+    cursor: pointer;
     display: flex;
     width: 52px;
     height: 52px;
@@ -117,7 +139,6 @@
       text-decoration: none;
       font-weight: bold;
       font-size: 1,6vw;
-      color: #7c106a;
     }
   
   }
