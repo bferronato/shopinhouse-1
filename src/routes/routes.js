@@ -1,14 +1,8 @@
-import CartView from '../views/CartView';
 import ListProducts from '../components/ListProducts';
 import ShopCart from '../components/ShopCart';
 import ProductDetail from '../components/ProductDetail';
 
 const route = [
-  {
-    path: '/cart',
-    component: CartView,
-    exact: true,
-  },
   {
     path: '/',
     component: ListProducts,

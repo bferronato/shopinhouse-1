@@ -10,7 +10,6 @@ const ShopInHouseApp = () => {
         <div className={'app__root'}>
             <Provider
                 store={store}>
-                {/* <Header /> */}
                 <BrowserRouter
                     basename={process.env.PUBLIC_URL}>
                     <Navbar />
