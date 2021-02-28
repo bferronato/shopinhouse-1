@@ -1,0 +1,23 @@
+.ProductDetail {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: 96px;
+}
+
+.ProductDetail__title {
+  position: absolute;
+  width: 755px;
+  height: 24px;
+  left: 156px;
+  top: 102px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 24px;
+  text-align: center;
+  color: #000000;
+}
