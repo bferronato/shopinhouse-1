@@ -15,9 +15,16 @@ function Navbar(props) {
 
 
   useEffect(() => {
-    if (pesquisa.length === 0) {setTitulo("Bem vindo!")} else {setTitulo(`Resultados para "${pesquisa}"`)
-    }} ,[pesquisa])
+    if (pesquisa.length === 0) {
+      setTitulo("Bem vindo!")
+      dispatch(asyncLoadQuery(pesquisa))
+    }
+  }, [pesquisa])
 
+  const onclick = () => {
+    dispatch(asyncLoadQuery(pesquisa))
+    setTitulo(`Resultados para "${pesquisa}"`)
+  }
 
   return (
     <div className="Navbar">
@@ -27,7 +34,7 @@ function Navbar(props) {
           <a onClick={() => history.push('/')} className="Nav__Logo">Shopee</a>
           <div className="feedback">{titulo}</div> { /* Precisa deixar o valor default como "Bem vindo!" e renderizar o feedback somente na view principal/homepage */}
         </div>
-        
+
       </div>
 
       <div className="secondThird">
@@ -37,7 +44,7 @@ function Navbar(props) {
             onChange={(e) => setPesquisa(e.target.value)}
             placeholder="Buscar...."
           ></input>
-          <span className="material-icons" onClick={ ()=> dispatch(asyncLoadQuery(pesquisa)) } >search</span>
+          <span className="material-icons" onClick={onclick} >search</span>
         </div>
       </div>
 
@@ -45,7 +52,7 @@ function Navbar(props) {
         <div className="cart">
           <button onClick={() => history.push('/shop-cart')} type="Button">
             <span className="material-icons">shopping_cart</span>
-            {(carAmount > 0 ) &&
+            {(carAmount > 0) &&
               <span className="notification">{carAmount}</span>
             }
           </button>
