@@ -1,0 +1,30 @@
+.returnButton__body {
+  position: relative;
+  width: 226px;
+  height: 44px;
+}
+
+.Card__footer__button__return {
+  position: absolute;
+  width: 226px;
+  height: 44px;
+  top: 498px;
+  right: 255px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #ffffff;
+  background: #8000ff;
+  border: unset;
+  border-radius: 4px;
+  outline: unset;
+}
+
+.Card__footer__button__return:active {
+  font-size: 10pt;
+}
+.Card__footer__button__return:hover {
+  opacity: 0.7;
+}

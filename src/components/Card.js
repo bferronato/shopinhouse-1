@@ -21,7 +21,7 @@ const Card = ({ product }) => {
           <header>
             <span
               className="Card__section__title"
-              onClick={() => history.push(`/${product.id}`)}
+              onClick={() => history.push(`/detail/${product.id}`, product.id)}
             >
               {product.name}
             </span>

@@ -5,9 +5,10 @@ import { useHistory, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { asyncLoadQuery } from '../redux/product/productAction';
 import { getDetailingProduct } from '../redux/product/productSelector';
+import ReturnButton from './ReturnButton';
 
 const CardDetail = () => {
-  const history = useHistory();
+  // const history = useHistory();
   const location = useLocation();
   const product = useSelector(getDetailingProduct);
   const dispatch = useDispatch();
@@ -22,7 +23,7 @@ const CardDetail = () => {
         <header>
           <img
             className="CardDetail__header__img"
-            src={product.image}
+            src={product.imageUrl}
             alt={product.description}
           />
         </header>
@@ -34,10 +35,11 @@ const CardDetail = () => {
           </header>
           <section>
             <span className="CardDetail__section__price__high">
-              {String(product.price).substr(
-                0,
-                String(product.price).length - 3,
-              )}
+              {'R$ ' +
+                String(product.price).substr(
+                  0,
+                  String(product.price).length - 3,
+                )}
               <span className="CardDetail__section__price__small">
                 {',' +
                   String(product.price).substr(
@@ -56,6 +58,7 @@ const CardDetail = () => {
         </section>
         <footer className="CardDetail__footer__buy">
           <PurchaseButtons product={product} />
+          {/* <ReturnButton /> */}
         </footer>
       </article>
     </Fragment>
