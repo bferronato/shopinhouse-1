@@ -4,20 +4,4 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin-left: 96px;
-}
-
-.ProductDetail__title {
-  position: absolute;
-  width: 755px;
-  height: 24px;
-  left: 152px;
-  top: 102px;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 33px;
-  line-height: 50px;
-
-  color: #000000;
 }

@@ -4,13 +4,9 @@
   position: relative;
   width: 1128px;
   height: 260px;
-  /* top: 190px; */
-
   background: #ffffff;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.13);
   border-radius: 7px;
-  margin-left: 32px;
-  margin-bottom: 32px;
 }
 
 .CardDetail__header__img {

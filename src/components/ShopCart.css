@@ -10,7 +10,7 @@
 .cart__list__header {
     display: flex;
     justify-content: space-between;
-    padding: 8px 32px;
+    padding: 0 32px 8px;
 }
 
 .cart__list__header__title {

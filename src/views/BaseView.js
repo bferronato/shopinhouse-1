@@ -7,7 +7,9 @@ const BaseView = (props) => {
     return (
         <>
             <h1 className="base__title">{title}</h1>
-            {props.children}
+            <div className="base__container">
+                {props.children}
+            </div>
         </>
     )
 }
