@@ -110,3 +110,8 @@
     outline: unset;
     cursor: pointer;
 }
+
+.cart_list_empty {
+    display: flex;
+    justify-content: center;
+}
