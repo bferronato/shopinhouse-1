@@ -16,7 +16,7 @@ const ListProducts = () => {
 
     return (
         <Fragment>
-            <BaseView title="Bem vindo!">
+            <BaseView>
                 <div className="listProducts">
                     {products?.map((item) => {
                         return <Card key={item.id} product={item} />;
