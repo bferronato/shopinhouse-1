@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { Fragment} from 'react';
 import { useHistory } from 'react-router-dom';
 import PurchaseButtons from './PurchaseButtons';
 import '../styles/Card.css';

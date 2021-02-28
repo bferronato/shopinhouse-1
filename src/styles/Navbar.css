@@ -131,6 +131,13 @@
    margin-top: 10px;
    margin-left: 6px;
   }
+
+  .Nav__Logo:hover, .material-icons:hover, .Nav__button__cart:hover {
+    opacity: .7;
+}
+.Nav__Logo:active, .material-icons:active, .Nav__button__cart:active {
+  transform: scale(.9);
+}
   
   @media only screen and (max-width: 1102px) {
   

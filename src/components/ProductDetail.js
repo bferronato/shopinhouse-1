@@ -7,17 +7,20 @@ import { getDetailingProduct } from '../redux/product/productSelector';
 import { useSelector } from 'react-redux';
 import ReturnButton from './ReturnButton';
 
+
 const ProductDetail = () => {
   const product = useSelector(getDetailingProduct);
 
   return (
     <Fragment>
-      <BaseView title={product.name}>
-        <div className="ProductDetail">
-          <CardDetail key={product} product={product}></CardDetail>
-          <ReturnButton />
-        </div>
-      </BaseView>
+      <div className="ProductDetail__title">
+        <BaseView title={product.name}>
+          <div className="ProductDetail">
+            <CardDetail key={product} product={product}></CardDetail>
+            <ReturnButton />
+          </div>
+        </BaseView>
+      </div>
     </Fragment>
   );
 };
