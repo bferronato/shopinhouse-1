@@ -17,7 +17,7 @@ function Navbar(props) {
       <div className="firstThird">
         <div className="logo">
           <a onClick={() => history.push('/')}>Shopee</a>
-          <div className="feedback">Resultados para {search}</div> { /* Precisa deixar o valor default como "Bem vindo!" e renderizar o feedback somente na view principal/homepage */ }
+          <div className="feedback">Resultados para {search}</div> { /* Precisa deixar o valor default como "Bem vindo!" e renderizar o feedback somente na view principal/homepage */}
         </div>
       </div>
 
@@ -26,7 +26,7 @@ function Navbar(props) {
           <input
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder = "Buscar...."
+            placeholder="Buscar...."
           ></input>
           <span className="material-icons">search</span>
         </div>
@@ -36,12 +36,14 @@ function Navbar(props) {
         <div className="cart">
           <button onClick={() => history.push('/shop-cart')} type="Button">
             <span className="material-icons">shopping_cart</span>
-            <span className="notification">{carAmount}</span> { /* Precisa criar condicional para quando o valor de itens for 0 não mostrar a badge*/ }
+            {(carAmount > 0 ) &&
+              <span className="notification">{carAmount}</span>
+            }
           </button>
         </div>
       </div>
 
-    </div>    
+    </div>
   );
 }
 
