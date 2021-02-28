@@ -16,18 +16,30 @@ export function productReducer(state = INITIAL_STATE, action) {
                 ]
             };
         case productType.DECREMENT_AMOUNT:
-            const decrementingItem = state.cart.find(cartItem => cartItem.id === action.payload);
-            decrementingItem.cartAmount--;
-            break;
+            const cartDecrement = [...state.cart];
+            const indexDecrement = cartDecrement.findIndex((cart) => cart.id === action.payload);
+
+            cartDecrement[indexDecrement].cartAmount -= 1;
+
+            return {
+                ...state,
+                cart: cartDecrement
+            };
         case productType.DO_CHECKOUT:
             return {
                 ...state,
                 cart: []
             }
         case productType.INCREMENT_AMOUNT:
-            const incrementingItem = state.cart.find(cartItem => cartItem.id === action.payload);
-            incrementingItem.cartAmount++;
-            break;
+            const cartIncrement = [...state.cart];
+            const indexIncrement = cartIncrement.findIndex((cart) => cart.id === action.payload);
+
+            cartIncrement[indexIncrement].cartAmount += 1;
+
+            return {
+                ...state,
+                cart: cartIncrement
+            };
         case productType.IS_LOADING:
             return {
                 ...state,
