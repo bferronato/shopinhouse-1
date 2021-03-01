@@ -31,6 +31,11 @@ function Navbar(props) {
     setPesquisa('')
   }
 
+  const finder = (e) => {
+    history.push('/')
+    setPesquisa(e.target.value)
+  }
+
   return (
     <div className="Navbar">
 
@@ -46,7 +51,7 @@ function Navbar(props) {
         <div className="search">
           <input
             value={pesquisa}
-            onChange={(e) => setPesquisa(e.target.value)}
+            onChange={finder}
             placeholder="Buscar...."
           ></input>
           <span className="material-icons" onClick={onclick} >search</span>

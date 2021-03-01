@@ -21,6 +21,6 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    margin-top: 64px;
+    margin-top: 300px;
 }
 /* retirei o     max-width: 1200px; do .listProducts pros cards ficarem centralizados na página de modo dinâmica */
