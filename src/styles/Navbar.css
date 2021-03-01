@@ -52,6 +52,7 @@
   }
   
   .search input {
+    padding-right: 70px;
     outline: none;
     border-radius: 54px;
     color: #333131d5;
