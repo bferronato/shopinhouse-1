@@ -22,6 +22,12 @@ const ListProducts = () => {
                         return <Card key={item.id} product={item} />;
                     })}
                 </div>
+
+                {products.length == 0 &&
+                    <div className="product_list_container">
+                        <h2 className="product_list_empty">Nenhum resultado encontrado para esta busca.</h2>
+                    </div>
+                }
             </BaseView>
         </Fragment>
     );
