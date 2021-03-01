@@ -26,12 +26,17 @@ function Navbar(props) {
     setTitulo(`Resultados para "${pesquisa}"`)
   }
 
+  const refresh = () => {
+    history.push('/')
+    setPesquisa('')
+  }
+
   return (
     <div className="Navbar">
 
       <div className="firstThird">
         <div className="logo">
-          <a onClick={() => history.go(0)} className="Nav__Logo">Shopee</a>
+          <a onClick={refresh} className="Nav__Logo">Shopee</a>
           <div className="feedback">{titulo}</div> { /* Precisa deixar o valor default como "Bem vindo!" e renderizar o feedback somente na view principal/homepage */}
         </div>
 
