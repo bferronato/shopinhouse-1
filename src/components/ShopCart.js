@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getCart } from '../redux/product/productSelector';
 import { doCheckout } from '../redux/product/productAction';
 import BaseView from '../views/BaseView';
-import './ShopCart.css';
+import '../styles/ShopCart.css';
 import PurchaseButtons from './PurchaseButtons';
 import ShopCartTotal from './ShopCartTotal';
 
