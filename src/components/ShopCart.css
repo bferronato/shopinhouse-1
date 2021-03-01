@@ -43,6 +43,9 @@
     line-height: 24px;
     padding: 16px 0;
     color: #000000;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 48%;
 }
 
 .cart__list__body__product {
@@ -57,7 +60,7 @@
 }
 
 .cart__list__body__product > div {
-    width: 100%
+    width: 100%;
 }
 
 .cart__list__body__divider {
